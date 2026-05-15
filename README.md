@@ -49,10 +49,10 @@ Gmail SMTP (App Password) example:
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
 SMTP_SECURE=true
-SMTP_USER=richieforwork17@gmail.com
+SMTP_USER=youremail@gmail.com
 SMTP_PASS=your-16-char-app-password
-MAIL_FROM=richieforwork17@gmail.com
-MAIL_FROM_NAME=Richie For Work
+MAIL_FROM=youremail@gmail.com
+MAIL_FROM_NAME=Your Name
 ```
 
 Optional Resend fallback/alternative:
