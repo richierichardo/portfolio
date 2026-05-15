@@ -1,51 +1,74 @@
 # Richie Richardo – Portfolio (Vite + React + Tailwind v4)
 
-One-page portfolio website with smooth scrolling sections, light/dark theme, and an email-based CV delivery system. Built with Vite + React and Tailwind v4 using external CSS only.
+One-page portfolio with a full-bleed hero video, scroll-linked navigation, light/dark theme, and expandable project cards. Built with Vite, React 19, and Tailwind CSS v4 (external CSS only).
 
 ## Quick start
 
-- Requirements: Node.js 18+ (Node 20 recommended)
-- Install: `npm install`
-- Run dev: `npm run dev`
-- Build: `npm run build`
-- Preview build: `npm run preview`
-- Lint: `npm run lint`
-- Test: `npm test` (Vitest + Testing Library)
+| Requirement | Node.js 18+ (Node 20 recommended) |
+|-------------|-----------------------------------|
+| Install     | `npm install`                     |
+| Dev server  | `npm run dev`                     |
+| Build       | `npm run build`                   |
+| Preview     | `npm run preview`                 |
+| Lint        | `npm run lint`                    |
+| Test        | `npm test` (Vitest + Testing Library) |
+| Watch tests | `npm run test:watch`              |
+
+## Features
+
+- **Hero** – Background video with poster fallback; social CTAs (GitHub, LinkedIn, Gmail `mailto`).
+- **About** – Intro quote and highlight cards (focus, stack, interests, goals).
+- **Projects** – Expandable cards with overview, problem, features, and GitHub links.
+- **Skills & tools** – Grid of tools with logos or letter placeholders.
+- **Contact** – Direct links to GitHub, LinkedIn, and Gmail (no form on the page).
+- **Navigation** – Sticky header, active section highlighting, mobile drawer.
+- **Theme** – Light/dark toggle persisted in `localStorage` (dark default).
+- **Loading screen** – Short boot animation; respects `prefers-reduced-motion`.
+- **Optional API** – `POST /api/request-cv` for server-side CV email (SMTP or Resend); not wired in the current UI.
 
 ## Project structure
 
-- `src/sections/` – Hero, About, Skills, Projects, Contact
-- `src/components/` – Navbar, Footer, ThemeToggle
-- `src/styles/` – Tailwind v4 external CSS files only
-  - `base.css` – imports Tailwind and global base styles
-  - `tokens.css` – design tokens and themes (CSS custom properties)
-  - `components.css` – reusable `.btn`, `.card`, `.tag`, `.badge`, `.nav-link`
-- `api/request-cv.js` – Serverless endpoint (Vercel) to email CV link via Resend (or simulate in dev)
-- `public/` – static assets (favicons, robots.txt, sitemap.xml, CV under `public/cv/...`)
+```
+src/
+  Root.jsx              # Shell: loading screen, navbar, main, footer
+  App.jsx               # Section layout (hero, about, projects, skills, contact)
+  sections/             # Hero, About, Projects, Skills, Contact
+  components/           # Navbar, Footer, ThemeToggle, ProjectCard, SkillCard, …
+  data/                 # projects.js, skills.js, social.js
+  hooks/                # useInView, usePrefersReducedMotion
+  utils/                # validation.js, rateLimit.js (shared with API tests)
+  styles/               # Tailwind v4 external CSS (base, tokens, components)
+api/
+  request-cv.js         # Vercel serverless: validate email, rate-limit, send CV
+public/
+  assets/               # Video, images, tools logos, CV PDF, favicon
+```
 
-See `docs/requirements.md` and `docs/plan.md` for the specification and implementation plan. CSS architecture is documented in `docs/style-guide.md`.
+See `docs/requirements.md`, `docs/plan.md`, and `docs/style-guide.md` for specification and CSS architecture.
 
 ## Theming
 
-- Theme is toggled via `<html data-theme="light|dark">` and persists to `localStorage`.
-- Dark theme is default if no preference saved; first load respects `prefers-color-scheme`.
+- Toggle sets `<html data-theme="light|dark">` and a `.dark` class.
+- Preference is stored under `localStorage` key `theme`.
+- Default theme is **dark** when nothing is saved.
 
-## CV sending (email)
+## CV email API (optional)
 
-Endpoint: `POST /api/request-cv` with JSON `{ email: string }`
+Endpoint: `POST /api/request-cv` with JSON `{ "email": "user@example.com" }`
 
-- Validates email; rate-limits per IP+email (1/min, 5/day) in-memory for demo.
-- Default provider: Gmail SMTP (Nodemailer). Configure via environment variables.
-- Alternative: Resend when `RESEND_API_KEY` is set.
-- If neither provider is configured in development, the endpoint returns simulated success with a link so you can test the flow without sending emails.
+- Validates email format; rate-limits per IP + email (1/min, 5/day, in-memory).
+- **SMTP (default):** Gmail App Password via Nodemailer — attaches PDF when `public/assets/<CV_FILE_NAME>` exists.
+- **Resend (fallback):** Used when `RESEND_API_KEY` is set and SMTP is unavailable.
+- **Dev:** Vite dev server proxies `/api/request-cv` to the same handler (`vite.config.js`).
+- Returns `500` if neither provider is configured (no silent simulation).
+
+The contact section uses **mailto** links only; wire a form yourself if you want this API in the UI.
 
 ### Environment variables
 
-Create `.env.local` (or configure Vercel Project Settings) with SMTP and/or Resend keys. An example file is provided: `.env.example`.
+Copy `.env.example` to `.env.local` (local) or set in Vercel → Environment Variables:
 
-Gmail SMTP (App Password) example:
-
-```
+```env
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
 SMTP_SECURE=true
@@ -53,33 +76,30 @@ SMTP_USER=youremail@gmail.com
 SMTP_PASS=your-16-char-app-password
 MAIL_FROM=youremail@gmail.com
 MAIL_FROM_NAME=Your Name
-```
 
-Optional Resend fallback/alternative:
-
-```
-RESEND_API_KEY=your_resend_key
+# Optional
+RESEND_API_KEY=
+CV_FILE_NAME=CV_richie.pdf
 ```
 
 ## Deployment
 
-- Vercel is the recommended target. `vercel.json` is included.
-- Push to GitHub; connect the repo in Vercel; set `RESEND_API_KEY` in Project Settings → Environment Variables.
-- The API route `api/request-cv.js` runs as a Vercel Serverless Function on Node.js 20.
+- **Vercel** (recommended): `vercel.json` configures Vite build and Node 20 serverless functions.
+- Connect the repo, set SMTP and/or `RESEND_API_KEY`, and deploy.
+- Place the CV at `public/assets/CV_richie.pdf` (or the name in `CV_FILE_NAME`).
 
 ## CI/CD
 
-GitHub Actions workflow `.github/workflows/ci.yml` runs lint, tests, and build on PRs and pushes to `main`.
+`.github/workflows/ci.yml` runs lint, tests, and build on pushes and PRs to `main`.
 
-## SEO & Metadata
+## SEO & metadata
 
-`index.html` includes meta title/description, Open Graph, Twitter cards, and JSON-LD (`Person`). Robots and sitemap are in `public/robots.txt` and `public/sitemap.xml`. Favicon is served from `/assets/favicon.ico` as required.
+`index.html` includes title, description, Open Graph, Twitter cards, and JSON-LD (`Person`). `public/robots.txt` and `public/sitemap.xml` are included.
 
 ## Security
 
-- Input validation and server-side rate limiting implemented in the CV endpoint.
-- No secrets committed; use platform secrets. See `SECURITY.md` for abuse/reporting procedures.
+Input validation and rate limiting apply to the CV API. Do not commit secrets. See [SECURITY.md](./SECURITY.md) for reporting and hardening notes.
 
 ## Contributing
 
-Clone, `npm install`, `npm run dev`. Follow the style guide in `docs/style-guide.md`. New contributors should get the project running in under 10 minutes.
+Clone, `npm install`, `npm run dev`. Follow `docs/style-guide.md`. Run `npm test` before opening a PR.
