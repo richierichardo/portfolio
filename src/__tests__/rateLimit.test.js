@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { SimpleRateLimiter } from '../../src/utils/rateLimit.js'
+import { SimpleRateLimiter } from '../utils/rateLimit.js'
 
 describe('SimpleRateLimiter', () => {
   it('allows first request and blocks subsequent within window when max=1', () => {
