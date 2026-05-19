@@ -16,7 +16,7 @@ export const projects = [
       'Team Builder: coverage, defense, roles, and shared-weakness penalties',
       'Counter Analyzer for opponent teams with ranked candidates and risk notes',
     ],
-    githubUrl: 'https://github.com/richierichardo',
+    githubUrl: 'https://github.com/richierichardo/Pokemon-build',
     liveUrl: null,
   },
   {
