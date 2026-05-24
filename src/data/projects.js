@@ -20,17 +20,24 @@ export const projects = [
     liveUrl: null,
   },
   {
-    id: 'todo',
-    title: 'Todo App',
-    shortDescription: 'Focused task list with local persistence and a calm, minimal interface.',
+    id: 'finance-tracker',
+    title: 'Finance Tracker',
+    shortDescription: 'A modular personal finance platform for tracking cashflow, wallets, budgets, recurring entries, and future investment integration.',
     imageSrc: '/assets/proyek/proyek2.webp',
-    imageAlt: 'Todo application interface',
-    tech: ['React', 'TypeScript'],
-    problem: 'Practice shipping a small product loop: state, persistence, and UX polish.',
+    imageAlt: 'Finance Tracker interface',
+    tech: ['Laravel', 'React', 'Inertia.js', 'TypeScript', 'Vite', 'PostgreSQL'],
+    problem: 'Build a structured financial system that goes beyond simple income-expense logging by supporting wallet-based cashflow tracking, budget monitoring, recurring transactions, analytics, and a foundation for future stock and asset modules.',
     description:
-      'A lightweight productivity surface that prioritizes clarity and keyboard-friendly flows.',
-    features: ['Local storage persistence', 'Filtering and completion states', 'Responsive layout'],
-    githubUrl: 'https://github.com/richierichardo',
+      'Finance Tracker is a personal finance platform designed as the foundation of a broader financial ecosystem. It helps users manage wallets, record income, expenses, and transfers, monitor category-based budgets, automate recurring transactions, and view analytics dashboards. The architecture is planned to scale into future modules such as stock portfolio tracking, AI-driven insights, and other financial tools while keeping net worth modeling consistent.',
+    features: [
+      'Multi-wallet cash management with transfer tracking',
+      'Income, expense, and paired transfer transaction flows',
+      'Category-based budgeting with usage monitoring',
+      'Recurring transaction automation',
+      'Dashboard analytics for cashflow and spending patterns',
+      'Architecture prepared for AI insights and investment module integration'
+    ],
+    githubUrl: 'https://github.com/richierichardo/Finance-apps',
     liveUrl: null,
   },
   {
