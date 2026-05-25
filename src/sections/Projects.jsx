@@ -16,7 +16,7 @@ export default function Projects() {
           id="projects-title"
           eyebrow="Selected work"
           title="Projects"
-          description="Product-minded builds that pair clear UX with pragmatic engineering. Open a card for the full story."
+          description="Case studies across finance tools, dataset exploration, dashboards, and API utilities—open a card for problem, stack, and features."
         />
       </div>
 

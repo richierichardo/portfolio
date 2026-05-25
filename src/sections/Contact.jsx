@@ -37,7 +37,7 @@ export default function Contact() {
               as="a"
               href={socialLinks.github}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn !border-transparent !bg-[rgb(var(--color-accent-primary))] !text-[rgb(var(--color-accent-primary-contrast))] hover:!shadow-[0_10px_28px_rgb(var(--color-accent-primary)/0.28)]"
             >
               <IconGitHub className="h-5 w-5" />
@@ -52,7 +52,7 @@ export default function Contact() {
               as="a"
               href={socialLinks.linkedin}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn !border-transparent !bg-[rgb(var(--color-accent-primary))] !text-[rgb(var(--color-accent-primary-contrast))] hover:!shadow-[0_10px_28px_rgb(var(--color-accent-primary)/0.28)]"
             >
               <IconLinkedIn className="h-5 w-5" />

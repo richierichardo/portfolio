@@ -121,7 +121,7 @@ export default async function handler(req, res) {
         })
 
         return res.status(200).json({ message: 'CV sent to your email.' })
-      } catch (e) {
+      } catch {
         // Fall through to Resend or simulated with a generic error if all providers fail
       }
     }
@@ -153,7 +153,7 @@ export default async function handler(req, res) {
     return res.status(500).json({
       error: 'Email service is not configured on the server. Please set SMTP or RESEND env variables.',
     })
-  } catch (err) {
+  } catch {
     return res.status(500).json({ error: 'Internal error.' })
   }
 }

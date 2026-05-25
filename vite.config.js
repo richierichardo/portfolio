@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
         // Simple dev-time wiring so /api/request-cv works when running `npm run dev`.
         name: 'dev-api-request-cv',
         configureServer(server) {
-          server.middlewares.use('/api/request-cv', (req, res, next) => {
+          server.middlewares.use('/api/request-cv', (req, res) => {
             if (req.method !== 'POST') {
               // Let the handler itself deal with non-POST methods.
             }

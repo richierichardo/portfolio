@@ -3,14 +3,14 @@ export const projects = [
     id: 'pokemon',
     title: 'Pokémon Team Builder',
     shortDescription:
-      'Explore Pokédex data, build balanced 3-Pokémon teams, and get explainable type-based counters—Python pipeline plus React.',
+      'React data exploration tool for Pokédex datasets—build balanced teams and get explainable type-based counter recommendations.',
     imageSrc: '/assets/proyek/proyek1.webp',
     imageAlt: 'Pokémon Team Builder app preview',
     tech: ['React', 'Vite', 'Python', 'Pandas'],
     problem:
-      'Players often lack a quick way to see weaknesses, team balance, and sensible counters without digging through spreadsheets.',
+      'Players need a fast way to explore matchups, balance team coverage, and surface sensible counters without manual spreadsheet work.',
     description:
-      'Python + Pandas turn raw Pokédex CSVs into JSON; the React UI runs explainable type/stat scoring for teams and counters.',
+      'A Python + Pandas pipeline turns Pokédex CSVs into structured JSON; the React UI scores teams and counters with explainable type and stat logic recruiters and players can follow.',
     features: [
       'Explorer with search, type/gen filters, and detail pages (matchups, roles, sprites)',
       'Team Builder: coverage, defense, roles, and shared-weakness penalties',
@@ -22,20 +22,22 @@ export const projects = [
   {
     id: 'finance-tracker',
     title: 'Finance Tracker',
-    shortDescription: 'A modular personal finance platform for tracking cashflow, wallets, budgets, recurring entries, and future investment integration.',
+    shortDescription:
+      'Personal finance platform for multi-wallet cashflow, budgeting, recurring transactions, and analytics—Laravel API with a React interface.',
     imageSrc: '/assets/proyek/proyek2.webp',
     imageAlt: 'Finance Tracker interface',
     tech: ['Laravel', 'React', 'Inertia.js', 'TypeScript', 'Vite', 'PostgreSQL'],
-    problem: 'Build a structured financial system that goes beyond simple income-expense logging by supporting wallet-based cashflow tracking, budget monitoring, recurring transactions, analytics, and a foundation for future stock and asset modules.',
+    problem:
+      'Income–expense logging alone is not enough—users need wallet-based cashflow, budget monitoring, recurring automation, and a foundation for future investment modules.',
     description:
-      'Finance Tracker is a personal finance platform designed as the foundation of a broader financial ecosystem. It helps users manage wallets, record income, expenses, and transfers, monitor category-based budgets, automate recurring transactions, and view analytics dashboards. The architecture is planned to scale into future modules such as stock portfolio tracking, AI-driven insights, and other financial tools while keeping net worth modeling consistent.',
+      'Finance Tracker connects wallets, transactions, category budgets, and dashboard summaries into one practical money-management tool, with architecture ready to extend into stocks, AI insights, and richer financial workflows.',
     features: [
       'Multi-wallet cash management with transfer tracking',
       'Income, expense, and paired transfer transaction flows',
       'Category-based budgeting with usage monitoring',
       'Recurring transaction automation',
       'Dashboard analytics for cashflow and spending patterns',
-      'Architecture prepared for AI insights and investment module integration'
+      'Architecture prepared for AI insights and investment module integration',
     ],
     githubUrl: 'https://github.com/richierichardo/Finance-apps',
     liveUrl: null,
@@ -43,28 +45,40 @@ export const projects = [
   {
     id: 'data-viz',
     title: 'Data Insights Dashboard',
-    shortDescription: 'Exploratory dashboard for summarizing datasets and surfacing key KPIs.',
+    shortDescription:
+      'Stakeholder-friendly data dashboard that turns raw tables into KPIs, trends, and filterable segments for faster decisions.',
     imageSrc: '/assets/proyek/proyek3.webp',
-    imageAlt: 'Data dashboard mockup',
+    imageAlt: 'Data Insights Dashboard interface mockup',
     tech: ['Python', 'React', 'PostgreSQL'],
-    problem: 'Turn raw tables into decisions by highlighting trends without overwhelming stakeholders.',
+    problem:
+      'Teams struggle to see what matters in large datasets—stakeholders need clear KPIs and trends without drowning in raw tables.',
     description:
-      'Prototype dashboard combining Python-backed transforms with a React front end for readable charts and filters.',
-    features: ['KPI cards and trend views', 'Filterable segments', 'Export-friendly summaries'],
+      'A prototype analytics dashboard pairing Python-backed transforms with a React front end: readable charts, filterable segments, and export-friendly summaries for data-driven reviews.',
+    features: [
+      'KPI cards and trend views for at-a-glance performance',
+      'Filterable segments for audience, time range, and category breakdowns',
+      'Export-friendly summaries for reports and follow-up analysis',
+    ],
     githubUrl: 'https://github.com/richierichardo',
     liveUrl: null,
   },
   {
     id: 'api-tooling',
     title: 'API Integration Toolkit',
-    shortDescription: 'Small utilities for validating payloads, retrying requests, and logging outcomes.',
+    shortDescription:
+      'Node.js utility kit for validating payloads, retrying third-party requests, and logging integration outcomes with less glue code.',
     imageSrc: '/assets/proyek/proyek4.webp',
-    imageAlt: 'API tooling concept',
+    imageAlt: 'API Integration Toolkit concept preview',
     tech: ['Node.js', 'JavaScript'],
-    problem: 'Reduce fragile glue code when connecting third-party services.',
+    problem:
+      'Connecting external APIs often leads to fragile one-off scripts—teams need reusable validation, backoff, and traceable errors.',
     description:
-      'Reusable helpers for structured errors, backoff, and lightweight tracing suitable for portfolio demos.',
-    features: ['Composable fetch helpers', 'Typed error mapping', 'Developer-friendly logs'],
+      'Composable fetch helpers with structured error mapping, retry/backoff patterns, and developer-friendly logs—built for portfolio demos and real integration prototypes.',
+    features: [
+      'Composable fetch helpers with consistent request/response handling',
+      'Typed error mapping for clearer debugging across services',
+      'Lightweight tracing and logs suitable for integration workflows',
+    ],
     githubUrl: 'https://github.com/richierichardo',
     liveUrl: null,
   },

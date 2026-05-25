@@ -58,7 +58,7 @@ export default function ProjectCard({ project, from, revealVisible, staggerMs = 
             as="a"
             href={project.githubUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="btn-icon"
             aria-label={`${project.title} on GitHub`}
           >
@@ -69,7 +69,7 @@ export default function ProjectCard({ project, from, revealVisible, staggerMs = 
               as="a"
               href={project.liveUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="btn-icon"
               aria-label={`${project.title} live demo`}
             >
