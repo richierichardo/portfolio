@@ -7,6 +7,7 @@ describe('About', () => {
     render(<About />)
     expect(screen.getByRole('heading', { name: /About me/i })).toBeInTheDocument()
     expect(screen.getByText(/intersection of Python, data, and the web/i)).toBeInTheDocument()
+    expect(screen.getByText(/Python and Data Specialist focused on building/i)).toBeInTheDocument()
     expect(screen.getByText('Focus')).toBeInTheDocument()
     expect(screen.getByText('Current stack')).toBeInTheDocument()
     expect(screen.getByText('Interests')).toBeInTheDocument()

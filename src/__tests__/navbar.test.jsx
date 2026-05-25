@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import Navbar from '../components/Navbar.jsx'
 
 function mountSections() {
-  ;['hero', 'about', 'projects', 'skills', 'contact'].forEach((id) => {
+  ;['hero', 'about', 'projects', 'skills', 'faq', 'contact'].forEach((id) => {
     const el = document.createElement('section')
     el.id = id
     document.body.appendChild(el)
@@ -24,6 +24,7 @@ describe('Navbar', () => {
     expect(within(header).getByRole('link', { name: 'About' })).toHaveAttribute('href', '#about')
     expect(within(header).getByRole('link', { name: 'Projects' })).toHaveAttribute('href', '#projects')
     expect(within(header).getByRole('link', { name: 'Skills' })).toHaveAttribute('href', '#skills')
+    expect(within(header).getByRole('link', { name: 'FAQ' })).toHaveAttribute('href', '#faq')
     expect(within(header).getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '#contact')
   })
 

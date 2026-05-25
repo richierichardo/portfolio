@@ -1,6 +1,7 @@
 import SectionHeader from '../components/SectionHeader.jsx'
 import AboutQuote from '../components/AboutQuote.jsx'
 import InfoCard from '../components/InfoCard.jsx'
+import { whatIDoCopy } from '../data/siteMeta.js'
 import { useInView } from '../hooks/useInView.js'
 
 const highlights = [
@@ -43,6 +44,13 @@ export default function About() {
           shipping responsive interfaces that stay fast and readable. I like pairing analytical rigor with practical
           execution: fewer buzzwords, more things that actually work in the browser.
         </AboutQuote>
+      </div>
+
+      <div
+        className={`reveal ${visible ? 'is-visible' : ''}`.trim()}
+        style={{ transitionDelay: visible ? '130ms' : '0ms' }}
+      >
+        <p className="about-what-i-do">{whatIDoCopy}</p>
       </div>
 
       <div className="about-info-grid">

@@ -2,6 +2,7 @@ import Hero from './sections/Hero.jsx'
 import About from './sections/About.jsx'
 import Projects from './sections/Projects.jsx'
 import Skills from './sections/Skills.jsx'
+import Faq from './sections/Faq.jsx'
 import Contact from './sections/Contact.jsx'
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         </section>
         <section id="skills" aria-labelledby="skills-title" className="section">
           <Skills />
+        </section>
+        <section id="faq" aria-labelledby="faq-title" className="section">
+          <Faq />
         </section>
         <section id="contact" aria-labelledby="contact-title" className="section">
           <Contact />

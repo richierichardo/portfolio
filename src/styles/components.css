@@ -1124,6 +1124,50 @@
     line-height: var(--leading-snug);
   }
 
+  .about-what-i-do {
+    max-width: 42rem;
+    margin: var(--space-8) auto 0;
+    text-align: center;
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+    color: rgb(var(--color-muted));
+  }
+
+  /* FAQ */
+  .faq-list {
+    margin-top: var(--space-8);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .faq-list__item {
+    margin: 0;
+    padding-bottom: var(--space-5);
+    border-bottom: 1px solid rgb(var(--color-border) / 0.65);
+  }
+
+  .faq-list__item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .faq-list__question {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: rgb(var(--color-fg));
+    margin: 0 0 var(--space-2);
+  }
+
+  .faq-list__answer {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+    color: rgb(var(--color-muted));
+  }
+
   /* Contact CTA */
   .contact-cta {
     padding: var(--space-8);

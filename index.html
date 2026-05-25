@@ -1,40 +1,51 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Keep metadata and JSON-LD in sync with src/data/siteMeta.js -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Richie Richardo – Professional Portfolio</title>
+    <title>Richie Richardo | Python &amp; Data Specialist Portfolio</title>
     <meta
       name="description"
-      content="Richie Richardo's one-page portfolio. Frontend developer specializing in React and Tailwind. Projects, skills, and a contact form to request my CV."
+      content="Portfolio of Richie Richardo, a Python and Data Specialist building data-driven web tools, dashboards, automation workflows, and modern React interfaces."
     />
-    <link rel="canonical" href="https://example.com/" />
+    <meta name="author" content="Richie Richardo" />
+    <meta
+      name="keywords"
+      content="Richie Richardo, Python and Data Specialist, Data Analyst Portfolio, React Portfolio, Python Portfolio, Web Developer Portfolio, Data Dashboard, Automation Workflow, Laravel, React, Tailwind CSS, Portfolio Indonesia"
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://riport.web.id/" />
 
-    <!-- Favicon (per requirements: /assets/favicon.ico) -->
     <link rel="icon" href="/assets/favicon.ico" />
     <meta name="theme-color" content="#0B0F0E" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Richie Richardo – Frontend Developer" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_ID" />
+    <meta property="og:site_name" content="Richie Richardo Portfolio" />
+    <meta property="og:title" content="Richie Richardo | Python &amp; Data Specialist Portfolio" />
     <meta
       property="og:description"
-      content="Fast, accessible React + Tailwind projects, skills, and contact to request my CV."
+      content="Portfolio of Richie Richardo, a Python and Data Specialist building data-driven web tools, dashboards, automation workflows, and modern React interfaces."
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/" />
-    <meta property="og:image" content="https://example.com/og-image.jpg" />
+    <meta property="og:url" content="https://riport.web.id/" />
+    <!-- TODO: Add public/assets/og-image.png (1200×630) and switch to /assets/og-image.png -->
+    <meta property="og:image" content="https://riport.web.id/assets/hero-img.webp" />
+    <meta property="og:image:alt" content="Richie Richardo portfolio preview" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Richie Richardo – Frontend Developer" />
+    <meta name="twitter:title" content="Richie Richardo | Python &amp; Data Specialist Portfolio" />
     <meta
       name="twitter:description"
-      content="Fast, accessible React + Tailwind projects, skills, and contact to request my CV."
+      content="Portfolio of Richie Richardo, a Python and Data Specialist building data-driven web tools, dashboards, automation workflows, and modern React interfaces."
     />
-    <meta name="twitter:image" content="https://example.com/og-image.jpg" />
+    <meta name="twitter:image" content="https://riport.web.id/assets/hero-img.webp" />
+    <meta name="twitter:image:alt" content="Richie Richardo portfolio preview" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -42,17 +53,93 @@
       rel="stylesheet"
     />
 
-    <!-- JSON-LD: Person -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://riport.web.id/#person",
         "name": "Richie Richardo",
-        "jobTitle": "Frontend Developer",
-        "url": "https://example.com/",
+        "url": "https://riport.web.id/",
+        "jobTitle": "Python and Data Specialist",
+        "description": "Python and Data Specialist building data-driven web tools, dashboards, automation workflows, and modern React interfaces.",
+        "knowsAbout": [
+          "Python",
+          "Data Analysis",
+          "React",
+          "Tailwind CSS",
+          "Laravel",
+          "PHP",
+          "JavaScript",
+          "Node.js",
+          "Data Dashboard",
+          "Automation Workflow",
+          "Web Development",
+          "Financial Tracking Applications",
+          "PostgreSQL"
+        ],
         "sameAs": [
           "https://github.com/richierichardo",
-          "http://www.linkedin.com/in/richie-richardo21"
+          "https://www.linkedin.com/in/richie-richardo21"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Richie Richardo Portfolio",
+        "url": "https://riport.web.id/",
+        "description": "Portfolio of Richie Richardo, a Python and Data Specialist building data-driven web tools, dashboards, automation workflows, and modern React interfaces.",
+        "author": { "@id": "https://riport.web.id/#person" }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Richie Richardo Portfolio",
+        "url": "https://riport.web.id/",
+        "description": "Portfolio of Richie Richardo, a Python and Data Specialist.",
+        "mainEntity": { "@id": "https://riport.web.id/#person" }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Richie Richardo's portfolio focused on?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This portfolio focuses on Python, data analysis, dashboard development, automation workflows, and modern web interfaces."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What technologies does Richie Richardo use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Richie works with Python, React, Tailwind CSS, Laravel, PHP, JavaScript, Node.js, PostgreSQL, MongoDB, and related web and data tools."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What types of projects are included?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The portfolio includes finance tracking apps, data dashboards, automation tools, dataset exploration projects, and modern web applications."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Richie Richardo focused on data, web development, or both?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Richie focuses on the intersection of data and web development, turning messy information into usable tools and clean interfaces."
+            }
+          }
         ]
       }
     </script>
@@ -61,5 +148,4 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-  
 </html>
