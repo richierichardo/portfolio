@@ -36,7 +36,7 @@ Personal one-page portfolio for **Richie Richardo** (Python and Data Specialist)
 
 - Vite 7, React 19, Tailwind CSS v4
 - Vitest + Testing Library
-- Vercel serverless (`api/request-cv.js`) optional
+- Optional CV email API (`api/request-cv.js`, Vercel-style; not used on static Lighthouse hosting)
 
 ## Project structure
 
@@ -85,13 +85,21 @@ npm run build
 
 ## Deployment
 
-- **Vercel** (recommended): connect the repo and deploy the Vite build.
-- Set env vars only if you use `POST /api/request-cv` (SMTP or Resend).
+- **Target:** Tencent Lighthouse (static `dist/` via nginx), domain `https://riport.web.id/`.
+- **Flow:** push (or merge PR) to `main` → GitHub Actions path filter → lint/test/build → SSH deploy.
+- One long-lived branch: `main`. Feature branches are optional.
 - Place optional CV PDF at `public/assets/CV_richie.pdf`.
+- Local setup checklists (gitignored): copy ideas from `ops/` on your machine — see repo ignore for `ops/`. Create `ops/github-setup.md` and `ops/server-setup.md` locally for Secrets, SSH, nginx, DNS, and SSL.
 
 ## CI/CD
 
-[`.github/workflows/ci.yml`](.github/workflows/ci.yml) runs lint, tests, and build on pushes and PRs to `main`.
+[`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml):
+
+1. Detects changes under app paths (`src/`, `api/`, `public/`, lockfile, configs, …).
+2. Skips CI/deploy when only non-app files change.
+3. On push to `main` after a green build: SSH into the server, `git reset --hard origin/main`, `npm ci`, `npm run build`.
+
+Required GitHub Actions secrets: `SSH_HOST`, `SSH_USER`, `SSH_PRIVATE_KEY`, `DEPLOY_PATH`.
 
 ## Optional CV email API
 

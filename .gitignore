@@ -12,11 +12,47 @@ dist
 dist-ssr
 *.local
 
+# Environment & credentials (never commit secrets)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*credentials*
+*secret*
+*.secrets
+secrets/
+.secrets/
+auth.json
+service-account*.json
+firebase-adminsdk*.json
+google-services.json
+GoogleService-Info.plist
+
+# Local ops docs (server/GitHub setup — do not commit)
+ops/
+
+# Build / cache
+coverage/
+.turbo/
+.cache/
+*.tsbuildinfo
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
+Desktop.ini
 *.suo
 *.ntvs*
 *.njsproj
