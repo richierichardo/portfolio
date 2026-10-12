@@ -5,22 +5,10 @@ import { whatIDoCopy } from '../data/siteMeta.js'
 import { useInView } from '../hooks/useInView.js'
 
 const highlights = [
-  {
-    label: 'Focus',
-    text: 'Data, Python, and web—bridging analysis and interfaces.',
-  },
-  {
-    label: 'Current stack',
-    text: 'React, Tailwind, Node.js, and Python end to end.',
-  },
-  {
-    label: 'Interests',
-    text: 'Data analytics, IT consulting, SAP/ERP, and web apps.',
-  },
-  {
-    label: 'Goal',
-    text: 'Useful, data-driven tools and maintainable portfolio work.',
-  },
+  { label: 'Focus', text: 'Backend systems, Python, data, and applied AI.' },
+  { label: 'Current stack', text: 'Python, FastAPI, Laravel, PostgreSQL, and React.' },
+  { label: 'Interests', text: 'Data pipelines, automation, financial data, and AI systems.' },
+  { label: 'Goal', text: 'Grow into a full-stack engineer building reliable data products.' },
 ]
 
 export default function About() {
@@ -40,9 +28,9 @@ export default function About() {
         style={{ transitionDelay: visible ? '85ms' : '0ms' }}
       >
         <AboutQuote>
-          I work at the intersection of Python, data, and the web—shaping raw information into clear decisions, then
-          shipping responsive interfaces that stay fast and readable. I like pairing analytical rigor with practical
-          execution: fewer buzzwords, more things that actually work in the browser.
+          I build software at the intersection of backend systems, data, and applied AI—turning unstructured information
+          into reliable workflows, useful APIs, and interfaces people can actually use. I am still deepening my Python
+          practice while growing toward full-stack systems engineering.
         </AboutQuote>
       </div>
 

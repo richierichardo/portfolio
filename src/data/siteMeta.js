@@ -5,14 +5,16 @@ export const siteUrl = 'https://riport.web.id/'
 
 export const siteName = 'Richie Richardo Portfolio'
 
-export const siteTitle = 'Richie Richardo | Python & Data Specialist Portfolio'
+export const siteTitle = 'Richie Richardo | Software Engineer Portfolio'
 
 export const siteDescription =
-  'Portfolio of Richie Richardo, a Python and Data Specialist building data-driven web tools, dashboards, automation workflows, and modern React interfaces.'
+  'Portfolio of Richie Richardo, a software engineer building backend systems, data workflows, automation, and applied AI products.'
 
 export const siteKeywords = [
   'Richie Richardo',
-  'Python and Data Specialist',
+  'Software Engineer',
+  'Applied AI Engineer',
+  'Data Engineer',
   'Data Analyst Portfolio',
   'React Portfolio',
   'Python Portfolio',
@@ -45,12 +47,14 @@ export function absoluteUrl(path) {
 
 export const person = {
   name: 'Richie Richardo',
-  jobTitle: 'Python and Data Specialist',
+  jobTitle: 'Software Engineer',
   description:
-    'Python and Data Specialist building data-driven web tools, dashboards, automation workflows, and modern React interfaces.',
+    'Software Engineer building backend systems, data workflows, automation, and applied AI products with Python and modern web tooling.',
   knowsAbout: [
     'Python',
     'Data Analysis',
+    'FastAPI',
+    'REST APIs',
     'React',
     'Tailwind CSS',
     'Laravel',
@@ -62,28 +66,31 @@ export const person = {
     'Web Development',
     'Financial Tracking Applications',
     'PostgreSQL',
+    'Pandas',
+    'Docker',
+    'pgvector',
   ],
   sameAs: [socialLinks.github, socialLinks.linkedin.replace(/^http:/, 'https:')],
 }
 
 export const whatIDoCopy =
-  'Richie Richardo is a Python and Data Specialist focused on building data-driven web applications, dashboards, automation workflows, and practical interfaces using Python, React, Laravel, and modern web tooling.'
+  'I am a Software Engineer with a Python-first foundation, building backend systems, data pipelines, REST APIs, automation workflows, and applied AI products. My work connects structured data, practical interfaces, and reliable systems—from financial tools and web applications to AI knowledge workflows using PostgreSQL and pgvector.'
 
 export const faqItems = [
   {
     question: "What is Richie Richardo's portfolio focused on?",
     answer:
-      'This portfolio focuses on Python, data analysis, dashboard development, automation workflows, and modern web interfaces.',
+      'This portfolio focuses on backend engineering, data workflows, automation, applied AI, and practical full-stack web interfaces.',
   },
   {
     question: 'What technologies does Richie Richardo use?',
     answer:
-      'Richie works with Python, React, Tailwind CSS, Laravel, PHP, JavaScript, Node.js, PostgreSQL, MongoDB, and related web and data tools.',
+      'Richie works with Python, SQL, PostgreSQL, FastAPI, Laravel, PHP, JavaScript, React, Node.js, Streamlit, Docker, and related data and AI tooling.',
   },
   {
     question: 'What types of projects are included?',
     answer:
-      'The portfolio includes finance tracking apps, data dashboards, automation tools, dataset exploration projects, and modern web applications.',
+      'The portfolio includes finance applications, automation workflows, dataset exploration, backend systems, and applied AI/data projects.',
   },
   {
     question: 'Is Richie Richardo focused on data, web development, or both?',

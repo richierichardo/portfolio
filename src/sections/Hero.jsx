@@ -49,10 +49,10 @@ export default function Hero() {
         <h1 id="hero-title" className="hero-content__title">
           Richie Richardo
         </h1>
-        <p className="hero-content__role">Python and Data Specialist</p>
+        <p className="hero-content__role">Software Engineer · Python, Data &amp; Applied AI</p>
         <p className="hero-content__lead">
-          I connect Python and data work with thoughtful React interfaces—turning messy information into decisions
-          people can act on.
+          I build backend systems, data workflows, and practical full-stack interfaces with Python, JavaScript, and
+          applied AI.
         </p>
         <div className="hero-content__actions">
           <SocialButton href={socialLinks.github} variant="github" icon={<IconGitHub className="h-5 w-5" />}>

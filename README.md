@@ -1,6 +1,6 @@
 # Richie Richardo – Python & Data Specialist Portfolio
 
-Personal one-page portfolio for **Richie Richardo** (Python and Data Specialist): project case studies, skills, FAQ, and contact links. Built with **Vite**, **React 19**, and **Tailwind CSS v4** (external CSS only).
+Personal one-page portfolio for **Richie Richardo** (Software Engineer focused on Python, data, and applied AI): project case studies, skills, FAQ, and contact links. Built with **Vite**, **React 19**, and **Tailwind CSS v4** (external CSS only).
 
 ## Overview
 
